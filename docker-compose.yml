@@ -1,0 +1,113 @@
+services:
+  car_recognizer_cam1_test:
+    environment:
+      API_TOKEN: MEa-EeN1Sm0IL0pGYlXq3/PdQRlS?qPF7?W2?Gv8XYRgY4C1X!!F51wL4R9o2R?Df6QrXmCTBw?qSUrnhx/SS3QoTr43LG=sw12prCNf7!B6LkToX6shZFOYf1m5FldmX!j=LCzqXCOB8tNYvBtYP3FhJBBgT6nQU84NZ/eUOaBFT5JG=FUFFSdQg6dXIR0oZpI6W?mm74uvr9YSUfj?Vb2Ilknj/VqOjNVRNve6oUPkJSA-uFjvnbSsjxYAJz9D
+      API_URL_ALARM: http://195.49.212.96:9099/api/v2/orange/alarm
+      API_URL_EVENT: http://195.49.212.96:9099/api/v2/orange/event
+      CAM_NAME: cam1_test
+      CHECK_DIRECTION: 'true'
+      CLOSE_GATE: 'true'
+      CONFIDENCE: 55
+      CONF_NUMBER: 70
+      FPS: 5
+      MAC_ADDRESS: E4:24:6C:5E:13:E2
+      MAX_MOVE_PERCENT: 40
+      MODEL_IMAGE_SIZE: 256
+      NUMBER_FORMATS: '["DDDLLLDD", "DDDLLDD", "LDDDDDD", "LDDDLLL", "LDDDLL", "LDDDLLDD",
+        "LDDDLLDDD"]'
+      PIN: 54
+      PIXEL_NUMBER_RECOGNITION: 120
+      RTSP_LINK: rtsp://admin:A12345678@192.168.2.111:554/cam/realmonitor?channel=1&subtype=0
+      SAVE_VIDEO: 'true'
+      SERVER_REQUEST_TIMEOUT: 1
+      TIMEZONE: Etc/GMT-4
+      TIME_CLOSE_GATE_THRESHOLD: 10
+      TIME_RECOGNITION_THRESHOLD: 10
+      USE_LOCAL_DB: 'false'
+      VIDEO_ARCHIVE_HOURS: 3
+      X0Y0X1Y1: '[10, 10, 90, 90]'
+      db_path: /data/database.db
+    image: docker.io/nofantasyno/car_number_recognition:latest
+    privileged: true
+    restart: always
+    volumes:
+    - /media/usb/module/output_videos:/output_videos
+    - /media/usb/module/logs:/logs
+    - /media/usb/module/numbers:/numbers
+    - /media/usb/module/data:/data
+    - /media/usb/module/input_files_cam_out:/input_files_cam_out
+  car_recognizer_cam2_test:
+    environment:
+      API_TOKEN: bhgS3BRHRBIyi3AvbtjhWjKWlgGDAEwVZY1acEwqWcQ3WeEuKUTk13SFukkH0yRx
+      API_URL_ALARM: http://195.49.212.96:9099/api/v2/orange/alarm
+      API_URL_EVENT: http://195.49.212.96:9099/api/v2/orange/event
+      CAM_NAME: cam2_test
+      CHECK_DIRECTION: 'true'
+      CLOSE_GATE: 'true'
+      CONFIDENCE: 50
+      CONF_NUMBER: 60
+      FPS: 5
+      MAC_ADDRESS: 2c:13:9c:13:fb:13
+      MAX_MOVE_PERCENT: 40
+      MODEL_IMAGE_SIZE: 256
+      NUMBER_FORMATS: '["DDDLLLDD", "DDDLLDD", "LDDDDDD", "LDDDLLL", "LDDDLL", "LDDDLLDD",
+        "LDDDLLDDD"]'
+      PIN: 54
+      PIXEL_NUMBER_RECOGNITION: 130
+      RTSP_LINK: rtsp://admin:A12345678@192.168.2.112:554/cam/realmonitor?channel=1&subtype=0
+      SAVE_VIDEO: 'true'
+      SERVER_REQUEST_TIMEOUT: 1
+      TIMEZONE: Etc/GMT-4
+      TIME_CLOSE_GATE_THRESHOLD: 10
+      TIME_RECOGNITION_THRESHOLD: 10
+      USE_LOCAL_DB: 'true'
+      VIDEO_ARCHIVE_HOURS: 3
+      X0Y0X1Y1: '[10, 10, 90, 90]'
+      db_path: /data/database.db
+    image: docker.io/nofantasyno/car_number_recognition:latest
+    privileged: true
+    restart: always
+    volumes:
+    - /media/usb/module/output_videos:/output_videos
+    - /media/usb/module/logs:/logs
+    - /media/usb/module/numbers:/numbers
+    - /media/usb/module/data:/data
+    - /media/usb/module/input_files_cam_out:/input_files_cam_out
+  gpio_api_cam_1_test:
+    environment:
+      HOST: 0.0.0.0
+      CAM_NAME: cam1
+      PIN: 54
+      PORT: 8000
+      PROD: 'true'
+      RTSP_LINK: rtsp://admin:A12345678@192.168.2.111:554/cam/realmonitor?channel=1&subtype=0
+      TZ: Etc/GMT-4
+      db_path: /data/database.db
+    image: docker.io/nofantasyno/gpio_api:latest
+    ports:
+    - 8000:8000
+    privileged: true
+    restart: always
+    volumes:
+    - /media/usb/module/logs:/logs
+    - /media/usb/module/data:/data
+  gpio_api_cam_2_test:
+    environment:
+      HOST: 0.0.0.0
+      CAM_NAME: cam2
+      PIN: 54
+      PORT: 8001
+      PROD: 'true'
+      RTSP_LINK: rtsp://admin:A12345678@192.168.2.112:554/cam/realmonitor?channel=1&subtype=0
+      TZ: Etc/GMT-4
+      db_path: /data/database.db
+    image: docker.io/nofantasyno/gpio_api:latest
+    ports:
+    - 8001:8001
+    privileged: true
+    restart: always
+    volumes:
+    - /media/usb/module/logs:/logs
+    - /media/usb/module/data:/data
+version: '3.4'
+
