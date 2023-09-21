@@ -1,7 +1,9 @@
+version: '3.4'
+
 services:
   car_recognizer_cam1_test:
     environment:
-      API_TOKEN: MEa-EeN1Sm0IL0pGYlXq3/PdQRlS?qPF7?W2?Gv8XYRgY4C1X!!F51wL4R9o2R?Df6QrXmCTBw?qSUrnhx/SS3QoTr43LG=sw12prCNf7!B6LkToX6shZFOYf1m5FldmX!j=LCzqXCOB8tNYvBtYP3FhJBBgT6nQU84NZ/eUOaBFT5JG=FUFFSdQg6dXIR0oZpI6W?mm74uvr9YSUfj?Vb2Ilknj/VqOjNVRNve6oUPkJSA-uFjvnbSsjxYAJz9D
+      API_TOKEN: insert token
       API_URL_ALARM: http://195.49.212.96:9099/api/v2/orange/alarm
       API_URL_EVENT: http://195.49.212.96:9099/api/v2/orange/event
       CAM_NAME: cam1_test
@@ -14,13 +16,13 @@ services:
       MAX_MOVE_PERCENT: 40
       MODEL_IMAGE_SIZE: 256
       NUMBER_FORMATS: '["DDDLLLDD", "DDDLLDD", "LDDDDDD", "LDDDLLL", "LDDDLL", "LDDDLLDD",
-        "LDDDLLDDD"]'
+        "LDDDLLDDD", "DDDDDD", "LDDDDL", "LDDDDLL", "DDDDDLLL", "DDDDDLL", "DDDDDDL", "LLLLDDDD", "DDLLDDD", "DDDLLDD", "LLLDDD", "LLDDDLL"]'
       PIN: 54
       PIXEL_NUMBER_RECOGNITION: 120
       RTSP_LINK: rtsp://admin:A12345678@192.168.2.111:554/cam/realmonitor?channel=1&subtype=0
       SAVE_VIDEO: 'true'
-      SERVER_REQUEST_TIMEOUT: 1
-      TIMEZONE: Etc/GMT-4
+      SERVER_REQUEST_TIMEOUT: 2
+      TIMEZONE: Etc/GMT-6
       TIME_CLOSE_GATE_THRESHOLD: 10
       TIME_RECOGNITION_THRESHOLD: 10
       USE_LOCAL_DB: 'false'
@@ -38,7 +40,7 @@ services:
     - /media/usb/module/input_files_cam_out:/input_files_cam_out
   car_recognizer_cam2_test:
     environment:
-      API_TOKEN: bhgS3BRHRBIyi3AvbtjhWjKWlgGDAEwVZY1acEwqWcQ3WeEuKUTk13SFukkH0yRx
+      API_TOKEN: insert token
       API_URL_ALARM: http://195.49.212.96:9099/api/v2/orange/alarm
       API_URL_EVENT: http://195.49.212.96:9099/api/v2/orange/event
       CAM_NAME: cam2_test
@@ -50,14 +52,14 @@ services:
       MAC_ADDRESS: 2c:13:9c:13:fb:13
       MAX_MOVE_PERCENT: 40
       MODEL_IMAGE_SIZE: 256
-      NUMBER_FORMATS: '["DDDLLLDD", "DDDLLDD", "LDDDDDD", "LDDDLLL", "LDDDLL", "LDDDLLDD",
-        "LDDDLLDDD"]'
+     NUMBER_FORMATS: '["DDDLLLDD", "DDDLLDD", "LDDDDDD", "LDDDLLL", "LDDDLL", "LDDDLLDD",
+        "LDDDLLDDD", "DDDDDD", "LDDDDL", "LDDDDLL", "DDDDDLLL", "DDDDDLL", "DDDDDDL", "LLLLDDDD", "DDLLDDD", "DDDLLDD", "LLLDDD", "LLDDDLL"]'
       PIN: 54
       PIXEL_NUMBER_RECOGNITION: 130
       RTSP_LINK: rtsp://admin:A12345678@192.168.2.112:554/cam/realmonitor?channel=1&subtype=0
       SAVE_VIDEO: 'true'
-      SERVER_REQUEST_TIMEOUT: 1
-      TIMEZONE: Etc/GMT-4
+      SERVER_REQUEST_TIMEOUT: 2
+      TIMEZONE: Etc/GMT-6
       TIME_CLOSE_GATE_THRESHOLD: 10
       TIME_RECOGNITION_THRESHOLD: 10
       USE_LOCAL_DB: 'true'
@@ -81,7 +83,7 @@ services:
       PORT: 8000
       PROD: 'true'
       RTSP_LINK: rtsp://admin:A12345678@192.168.2.111:554/cam/realmonitor?channel=1&subtype=0
-      TZ: Etc/GMT-4
+      TZ: Etc/GMT-6
       db_path: /data/database.db
     image: docker.io/nofantasyno/gpio_api:latest
     ports:
@@ -99,7 +101,7 @@ services:
       PORT: 8001
       PROD: 'true'
       RTSP_LINK: rtsp://admin:A12345678@192.168.2.112:554/cam/realmonitor?channel=1&subtype=0
-      TZ: Etc/GMT-4
+      TZ: Etc/GMT-6
       db_path: /data/database.db
     image: docker.io/nofantasyno/gpio_api:latest
     ports:
@@ -109,5 +111,5 @@ services:
     volumes:
     - /media/usb/module/logs:/logs
     - /media/usb/module/data:/data
-version: '3.4'
+
 
