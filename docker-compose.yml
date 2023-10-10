@@ -3,7 +3,7 @@ version: '3.4'
 services:
   car_recognizer_cam1_test:
     environment:
-      API_TOKEN: insert token
+      API_TOKEN: 
       API_URL_ALARM: http://195.49.212.96:9099/api/v2/orange/alarm
       API_URL_EVENT: http://195.49.212.96:9099/api/v2/orange/event
       CAM_NAME: cam1_test
@@ -40,7 +40,7 @@ services:
     - /media/usb/module/input_files_cam_out:/input_files_cam_out
   car_recognizer_cam2_test:
     environment:
-      API_TOKEN: insert token
+      API_TOKEN: 
       API_URL_ALARM: http://195.49.212.96:9099/api/v2/orange/alarm
       API_URL_EVENT: http://195.49.212.96:9099/api/v2/orange/event
       CAM_NAME: cam2_test
@@ -52,7 +52,7 @@ services:
       MAC_ADDRESS: 2c:13:9c:13:fb:13
       MAX_MOVE_PERCENT: 40
       MODEL_IMAGE_SIZE: 256
-     NUMBER_FORMATS: '["DDDLLLDD", "DDDLLDD", "LDDDDDD", "LDDDLLL", "LDDDLL", "LDDDLLDD",
+      NUMBER_FORMATS: '["DDDLLLDD", "DDDLLDD", "LDDDDDD", "LDDDLLL", "LDDDLL", "LDDDLLDD",
         "LDDDLLDDD", "DDDDDD", "LDDDDL", "LDDDDLL", "DDDDDLLL", "DDDDDLL", "DDDDDDL", "LLLLDDDD", "DDLLDDD", "DDDLLDD", "LLLDDD", "LLDDDLL"]'
       PIN: 54
       PIXEL_NUMBER_RECOGNITION: 130
