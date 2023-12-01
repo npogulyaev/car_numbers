@@ -83,6 +83,7 @@ services:
     - /media/usb/module/input_files_cam_out:/input_files_cam_out
   gpio_api_cam_1_test:
     environment:
+      API_TOKEN: 
       HOST: 0.0.0.0
       CAM_NAME: cam1
       PIN: 54
@@ -101,6 +102,7 @@ services:
     - /media/usb/module/data:/data
   gpio_api_cam_2_test:
     environment:
+      API_TOKEN: 
       HOST: 0.0.0.0
       CAM_NAME: cam2
       PIN: 54
