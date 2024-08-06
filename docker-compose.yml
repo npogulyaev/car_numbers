@@ -31,7 +31,7 @@ services:
       db_path: /data/database.db
       HEALTH_CHECK_TIME: 5
       HEALTH_CHECK_API: http://195.49.212.96:9099/api/v2/orange/monitoring
-      LINE_THRESHOLD: 30
+      LINE_THRESHOLD: 20
       TIME_TO_SEND: 1
       RECOGNIZE_NUMBER_COUNT: 1
     image: docker.io/nofantasyno/car_number_recognition:latest
@@ -73,7 +73,7 @@ services:
       db_path: /data/database.db
       HEALTH_CHECK_TIME: 5
       HEALTH_CHECK_API: http://195.49.212.96:9099/api/v2/orange/monitoring
-      LINE_THRESHOLD: 30
+      LINE_THRESHOLD: 20
       TIME_TO_SEND: 1
       RECOGNIZE_NUMBER_COUNT: 1
     image: docker.io/nofantasyno/car_number_recognition:latest
